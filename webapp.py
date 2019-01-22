@@ -29,13 +29,14 @@ def renderPage1():
 @app.route('/page2',methods=['GET','POST'])
 def renderPage2():
     #TODO: set the first and last name in the session
-    
+    session["firstName"] = request.form["firstName"] #adds first name to cookie
+    session["lastName"] = request.form["lastName"] #adds the last name to cookie
     return render_template('page2.html')
 
 @app.route('/page3',methods=['GET','POST'])
 def renderPage3():
     #TODO: set the favorite color in the session
-    
+    session["favoriteColor"] = request.form["favoriteColor"] #adds favorite color to cookie
     return render_template('page3.html')
     
 if __name__=="__main__":
